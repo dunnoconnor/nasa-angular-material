@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { NasaApiService } from '../nasa-api.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-image-view',
@@ -7,18 +6,7 @@ import { NasaApiService } from '../nasa-api.service';
   styleUrls: ['./image-view.component.css']
 })
 export class ImageViewComponent {
-  imageOfTheDay: any;
-
-  constructor(private nasaApiService: NasaApiService) {}
-
-  ngOnInit() {
-    this.nasaApiService.getAstronomyPictureOfTheDay().subscribe(
-      (data: any) => {
-        this.imageOfTheDay = data;
-      },
-      (error: any) => {
-        console.log('An error occurred:', error);
-      }
-    );
-  }
+  @Input() imageSrc: string;
+  @Input() imageAlt: string;
+  @Input() imageDescription: string;
 }
