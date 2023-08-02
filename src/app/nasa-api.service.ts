@@ -5,8 +5,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class NasaApiService {
-  private apiKey = 'Fbc6i3XjnJIJcmQSZzwaMfojz9A5DIgQXJBbIIZE'; // Replace with your actual API key from NASA
+  private apiKey = 'DEMO_KEY'; // Replace with your actual API key from NASA
 
   constructor(private http: HttpClient) {}
 
